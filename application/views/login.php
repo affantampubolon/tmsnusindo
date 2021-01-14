@@ -25,7 +25,7 @@
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="<?= site_url('login') ?>" method="POST">
+      <form action="<?= site_url('login/login') ?>" method="POST">
         <div class="input-group mb-3">
           <input type="username" name="username" class="form-control" placeholder="Username">
           <div class="input-group-append">

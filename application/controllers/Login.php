@@ -39,11 +39,14 @@ class Login extends CI_Controller {
     {
         $username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
         $password = md5($this->input->post('password')); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
-        $user = $this->UserModel->get($username); // Panggil fungsi get yang ada di UserModel.php
+        // var_dump ($password);
+        //die;
+        $user = $this->User_Model->get($username); // Panggil fungsi get yang ada di UserModel.php
             if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
         $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
-            redirect('auth'); // Redirect ke halaman login
-            }else{
+            redirect('login'); // Redirect ke halaman login
+            }
+            else{
         if($password == $user->password){ // Jika password yang diinput sama dengan password yang didatabase
         $session = array(
           'authenticated'=>true, // Buat session authenticated dengan value true
@@ -51,10 +54,11 @@ class Login extends CI_Controller {
           'nama'=>$user->nama // Buat session authenticated
         );
         $this->session->set_userdata($session); // Buat session sesuai $session
-        redirect('template'); // Redirect ke halaman welcome
-            }else{
+        redirect('Main/template'); // Redirect ke halaman welcome
+            }
+            else{
         $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
-        redirect('auth'); // Redirect ke halaman login
+        redirect('login'); // Redirect ke halaman login
                 }
             }
     }
