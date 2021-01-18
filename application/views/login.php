@@ -27,7 +27,7 @@
 
       <form action="<?= site_url('login/login') ?>" method="POST">
         <div class="input-group mb-3">
-          <input type="username" name="username" class="form-control" placeholder="Username">
+          <input type="username" name="username" id="username" class="form-control" placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="passsword" id="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

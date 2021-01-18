@@ -41,7 +41,7 @@ class Login extends CI_Controller {
         $password = md5($this->input->post('password')); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
         // var_dump ($password);
         //die;
-        $user = $this->User_Model->get($username); // Panggil fungsi get yang ada di UserModel.php
+        $user = $this->User_Model->get($username,$password); // Panggil fungsi get yang ada di UserModel.php
         if(empty($user))
         { // Jika hasilnya kosong / user tidak ditemukan
             $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
