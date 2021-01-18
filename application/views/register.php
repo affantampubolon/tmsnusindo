@@ -25,7 +25,7 @@
 
       <form action="" method="post">
         <div class="input-group mb-3">
-          <a type="submit" id="2" action="<?php echo base_url(''); ?>index.php/Reguser/register" class="btn btn-primary btn-block">Marketing</a>
+          <a type="submit" id="2" action="<?php echo base_url(''); ?>Reguser/register" class="btn btn-primary btn-block">Marketing</a>
         </div>
         <div class="input-group mb-3">
           <a type="submit" id="3" class="btn btn-primary btn-block">Technician</a>
@@ -36,7 +36,7 @@
         <div class="row">
           <!-- /.col -->
           <div class="col-8">
-            <a href="<?php echo base_url(); ?>index.php/login" class="text-center">Back</a>
+            <a href="<?php echo base_url(); ?>login" class="text-center">Back</a>
           </div>
           <!-- /.col -->
           <!-- /.col -->

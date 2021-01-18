@@ -67,7 +67,7 @@
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="<?php echo base_url(); ?>index.php/Reguser" class="text-center">Register a new membership</a>
+        <a href="<?php echo base_url(); ?>Reguser" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.card-body -->
