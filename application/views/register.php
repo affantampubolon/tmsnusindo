@@ -21,17 +21,17 @@
       <h1><b>TMS</b>Nusindo</h1>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Choose Your Profile</p>
+      <p class="login-box-msg">Register, Choose Your Profile</p>
 
       <form action="" method="post">
         <div class="input-group mb-3">
-          <a type="submit" id="2" action="<?php echo base_url(''); ?>Reguser/register" class="btn btn-primary btn-block">Marketing</a>
+          <a type="submit" id="tns20000" class="btn btn-primary btn-block">Technician</a>  
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="3" class="btn btn-primary btn-block">Technician</a>
+          <a type="submit" id="tns30000" action="<?php echo base_url(''); ?>Reguser/register" class="btn btn-primary btn-block">Marketing</a>
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="4" class="btn btn-primary btn-block">Customer</a>
+          <a type="submit" id="tns40000" class="btn btn-primary btn-block">Customer</a>
         </div>
         <div class="row">
           <!-- /.col -->
