@@ -27,10 +27,6 @@ class Reguser extends CI_Controller {
 	{
 		$this->load->view('register');
 	}
-	public function index()
-	{
-		$this->load->view('register');
-	}
 
 	public function register()
 	{

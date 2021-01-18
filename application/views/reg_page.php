@@ -21,27 +21,40 @@
       <h1><b>TMS</b>Nusindo</h1>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Choose Your Profile</p>
+      <p class="login-box-msg">Register a new membership</p>
 
-      <form action="" method="post">
+      <form action="<?php echo base_url(''); ?>index.php/Reguser/register" method="post">
         <div class="input-group mb-3">
-          <a type="submit" id="2" action="<?php echo base_url(''); ?>index.php/Reguser/register" class="btn btn-primary btn-block">Marketing</a>
+          <input type="text" class="form-control" placeholder="Username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="3" class="btn btn-primary btn-block">Technician</a>
+          <input type="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="4" class="btn btn-primary btn-block">Customer</a>
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
         </div>
         <div class="row">
-          <!-- /.col -->
           <div class="col-8">
-            <a href="<?php echo base_url(); ?>index.php/login" class="text-center">Back</a>
+            <a href="<?php echo base_url(); ?>index.php/Reguser" class="text-center">Back</a>
           </div>
           <!-- /.col -->
-          <!-- /.col -->
           <div class="col-4">
-            
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
           <!-- /.col -->
         </div>
