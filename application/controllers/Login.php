@@ -42,25 +42,28 @@ class Login extends CI_Controller {
         // var_dump ($password);
         //die;
         $user = $this->User_Model->get($username); // Panggil fungsi get yang ada di UserModel.php
-            if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
-        $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
+        if(empty($user))
+        { // Jika hasilnya kosong / user tidak ditemukan
+            $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
             redirect('login'); // Redirect ke halaman login
+        }
+        else
+        {
+            if($password == $user->password){ // Jika password yang diinput sama dengan password yang didatabase
+                $session = array(
+                'authenticated'=>true, // Buat session authenticated dengan value true
+                'username'=>$user->username,  // Buat session username
+                'nama'=>$user->nama // Buat session authenticated
+                );
+                $this->session->set_userdata($session); // Buat session sesuai $session
+                redirect('Main/template'); // Redirect ke halaman welcome
             }
-            else{
-        if($password == $user->password){ // Jika password yang diinput sama dengan password yang didatabase
-        $session = array(
-          'authenticated'=>true, // Buat session authenticated dengan value true
-          'username'=>$user->username,  // Buat session username
-          'nama'=>$user->nama // Buat session authenticated
-        );
-        $this->session->set_userdata($session); // Buat session sesuai $session
-        redirect('Main/template'); // Redirect ke halaman welcome
+            else
+            {
+                $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
+                redirect('login'); // Redirect ke halaman login
             }
-            else{
-        $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
-        redirect('login'); // Redirect ke halaman login
-                }
-            }
+        }
     }
     public function logout(){
         $this->session->sess_destroy(); // Hapus semua session
