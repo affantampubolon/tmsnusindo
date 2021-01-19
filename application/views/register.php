@@ -25,13 +25,13 @@
 
       <form action="" method="post">
         <div class="input-group mb-3">
-          <a type="submit" id="tns20000" class="btn btn-primary btn-block">Technician</a>  
+          <a href="<?php echo base_url(''); ?>Reguser/form/tns20000" class="btn btn-primary btn-block">Technician</a>  
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="tns30000" action="<?php echo base_url(''); ?>Reguser/register" class="btn btn-primary btn-block">Marketing</a>
+          <a href="<?php echo base_url(''); ?>Reguser/form/tns30000" class="btn btn-primary btn-block">Marketing</a>
         </div>
         <div class="input-group mb-3">
-          <a type="submit" id="tns40000" class="btn btn-primary btn-block">Customer</a>
+          <a href="<?php echo base_url(''); ?>Reguser/form/tns40000" class="btn btn-primary btn-block">Customer</a>
         </div>
         <div class="row">
           <!-- /.col -->

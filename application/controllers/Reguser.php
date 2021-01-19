@@ -27,24 +27,44 @@ class Reguser extends CI_Controller {
 	{
 		$this->load->view('register');
 	}
+	function form($role)
+	{
+		if ($role=='tns20000')
+		{
+			$this->load->view('reg_page');
+		}
+		elseif ($role=='tns30000')
+		{
+			$this->load->view('reg_page');
+		}
+		elseif ($role=='tns40000')
+		{
+			$this->load->view('reg_page');
+		}
+	}
+
+
 
 	public function register()
 	{
-		$this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]|is_unique[tb_user.username]');
+		$this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]|is_unique[mst_user.username]');
 		$this->form_validation->set_rules('password', 'password','trim|required|min_length[1]|max_length[255]');
 		$this->form_validation->set_rules('email', 'email','trim|required|min_length[1]|max_length[255]');
+		$this->form_validation->set_rules('flg_aprv', 'flg_aprv','trim|required|min_length[1]|max_length[255]');
+		$this->form_validation->set_rules('role_id', 'role_id','trim|required|min_length[1]|max_length[255]');
+		$this->form_validation->set_rules('flg_used', 'flg_used','trim|required|min_length[1]|max_length[255]');
 		if ($this->form_validation->run()==true)
 	   	{
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$nama = $this->input->post('email');
+			$email = $this->input->post('email');
 			$this->auth->register($username,$password,$email);
 			redirect('login');
 		}
 		else
 		{
 			$this->session->set_flashdata('error', validation_errors());
-			redirect('register');
+			redirect('reg_page');
 		}
 	}
 	

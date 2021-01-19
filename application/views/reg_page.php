@@ -48,6 +48,9 @@
             </div>
           </div>
         </div>
+        <input type="hidden" name="flg_aprv" value="N"/>
+
+        <input type="hidden" name="flg_used" value="Y"/>
         <div class="row">
           <div class="col-8">
             <a href="<?php echo base_url(); ?>index.php/Reguser" class="text-center">Back</a>
