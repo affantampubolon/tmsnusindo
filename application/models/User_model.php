@@ -10,5 +10,14 @@ class User_model extends CI_Model
         // die;
         return $result;
     }
+    function register($username,$password,$nama)
+	{
+		$data_user = array(
+			'username'=>$username,
+			'password'=>password_hash($password,PASSWORD_DEFAULT),
+			'email'=>$email
+		);
+		$this->db->insert('mst_user',$data_user);
+	}
 
 }
